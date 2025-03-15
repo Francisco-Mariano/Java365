@@ -10,8 +10,9 @@ Nosso foco é fortalecer o conhecimento em **Java** por meio de estudos diários
 
 Ao longo do tempo, cobriremos diversos tópicos fundamentais e avançados, incluindo:
 
-|Tópico                    |Conteúdo|Progresso|
-|--------------------------|--------|---------|
-|Complexidade de Algoritmos|        |         |
-|Arrays                    |        |         |
-|                          |        |         |
+| Tópico                                                  |Conteúdo|Progresso|
+|---------------------------------------------------------|--------|---------|
+| [Complexidade de Algoritmos](./complexidade-algoritmos) |        |         |
+| Arrays                                                  |        |         |
+|                                                         |        |         |
+
