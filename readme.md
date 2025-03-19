@@ -14,5 +14,5 @@ Ao longo do tempo, cobriremos diversos tópicos fundamentais e avançados, inclu
 |---------------------------------------------------------|--------|---------|
 | [Complexidade de Algoritmos](./complexidade-algoritmos) |        |         |
 | Arrays                                                  |        |         |
-|                                                         |        |         |
+| String                                                  |        |         |
 
