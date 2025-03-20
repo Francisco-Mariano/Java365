@@ -24,10 +24,10 @@ LINEAR-SEARCH(A, v)
 
 O tempo de execução deste algoritmo depende da posição do elemento na lista:
 
-|    Caso    |Complexidade|                                                        Informacoes                                                      |
-|------------|----|---------------------------------------------------------------------------------------------------------------------------------|
-|Melhor caso |O(1)|Se o nome estiver na primeira posição, encontramos imediatamente e encerramos a busca                                            |
-|Pior caso   |O(n)|Se o nome estiver na última posição ou não existir na lista, precisamos percorrer todos os elementos antes de concluir a busca   |
+|    Caso    |Complexidade| Informacões                                                                                                                    |
+|------------|----|--------------------------------------------------------------------------------------------------------------------------------|
+|Melhor caso |O(1)| Se o nome estiver na primeira posição, encontramos imediatamente e encerramos a busca                                          |
+|Pior caso   |O(n)| Se o nome estiver na última posição ou não existir na lista, precisamos percorrer todos os elementos antes de concluir a busca |
 
 Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, confira o código disponível [aqui](./codes/LinearSearch.java).
 
@@ -60,11 +60,11 @@ No entanto, é importante notar que, no pior caso, a complexidade pode se degrad
 
 O tempo de execução deste algoritmo:
 
-|       Caso        |Complexidade|                                                  Informacoes                                                     |
-|-------------------|------------|------------------------------------------------------------------------------------------------------------------|
-|Caso médio         |O(n)        |Devido à eficiência das operações de hash                                                                         |
-|Pior caso          |O(n)        |Se houver muitas colisões na Hash Table, tornando a busca O(n) em casos extremos                                  |
-|Pior caso teórico  |O(n²)       |Se ocorrerem colisões massivas que forcem todas as operações a percorrerem listas de tamanho n em um único bucket |
+|       Caso        |Complexidade| Informacões                                                                                                       |
+|-------------------|------------|-------------------------------------------------------------------------------------------------------------------|
+|Caso médio         |O(n)        | Devido à eficiência das operações de hash                                                                         |
+|Pior caso          |O(n)        | Se houver muitas colisões na Hash Table, tornando a busca O(n) em casos extremos                                  |
+|Pior caso teórico  |O(n²)       | Se ocorrerem colisões massivas que forcem todas as operações a percorrerem listas de tamanho n em um único bucket |
 
 Nós consideramos que o pior caso é O(n), pois atualmente as implementações modernas de Hash Table como o HashMap/HashTable do Java e de outras linguagens, utilizam técnicas como:
 
@@ -77,9 +77,38 @@ Portanto, na prática, a complexidade se mantém O(n) na maioria dos casos reais
 Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, confira o código disponível [aqui](./codes/UniquenessCheck.java). Na versão anterior, para simplificar, usei o nome como chave e o valor 0. Porém, você pode armazenar o objeto completo Pessoa como valor. Confira [aqui](./codes/CompleteUniquenessCheck.java) um exemplo que utiliza a classe Pessoa completa.
 
 ### Verificação de Unicidade com Set
-> Implementação e escritam, adicionar as referência que usar para construir código no Referências.
+
+A interface Set faz parte do pacote java.util e estende a interface Collection. Ela representa um conjunto de elementos sem uma ordem definida e não permite valores duplicados.
+
+O HashSet é muito útil quando precisamos armazenar elementos únicos sem nos preocupar com a ordem. Ele usa uma tabela hash, o que torna as operações de inserção, remoção e busca muito rápidas, com uma complexidade média de O(1).
+
+##### Pseudocódigo
+
+```
+UNIQUENESS-CHECK-SET(A)
+1  INICIO
+2   listaNomes ← ["Jose", "João", "Maria", "Pedro", "Paula", "Jose"]
+3   setNomes ← {}  // Conjunto vazio
+4
+5    PARA CADA elemento EM listaNomes FAÇA
+6        SE elemento ESTÁ EM setNomes ENTÃO
+7             EXIBIR "Nome duplicado: " + elemento
+8        SENÃO
+9             ADICIONAR elemento A setNomes
+10              EXIBIR elemento
+11       FIM SE
+12   FIM PARA
+12 FIM
+```
+- No exemplo, temos uma lista com valores repetidos e queremos garantir que os elementos fiquem únicos. Para isso, utilizamos o HashSet, que automaticamente elimina duplicatas.
+
+|       Caso        |Complexidade| Informacões                                                                                                                            |
+|-------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------|
+|Caso médio         |O(n)        | As operações de inserção, pesquisa e remoção em uma tabela hash têm complexidade O(1), ou seja, são muito rápidas.                     |
+|Pior caso          |O(n)        | Se houver muitas colisões na tabela hash, a complexidade pode aumentar para O(n), mas isso é raro quando a função de hash é eficiente. |
 
 ## Código de Complexidade O(n²)
+
 
 ### Bubble Sort
 
@@ -92,3 +121,4 @@ Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, 
 - [Class HashMap<K,V> O](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)
 - [HashMap containsKey() Method in Java](https://www.geeksforgeeks.org/hashmap-containskey-method-in-java/)
 - [Linear Search](https://www.geeksforgeeks.org/linear-search/)
+- [HashSet](https://www.geeksforgeeks.org/hashset-in-java/)
