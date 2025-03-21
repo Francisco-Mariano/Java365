@@ -109,6 +109,37 @@ UNIQUENESS-CHECK-SET(A)
 
 ## Código de Complexidade O(n²)
 
+A notação O(n²) representa a complexidade de algoritmos cujo tempo de execução cresce quadraticamente em relação ao tamanho da entrada. Isso significa que, se dobrarmos o número 
+de elementos de entrada (n), o tempo de execução será aproximadamente quatro vezes maior.
+
+Essa complexidade ocorre, geralmente, quando um algoritmo possui dois loops aninhados iterando sobre os elementos de entrada. Como resultado, para cada elemento processado no primeiro
+loop, o segundo loop também percorre todos os elementos, multiplicando o número total de operações.
+
+```
+UNIQUENESS-CHECK-BubbleSort(A)
+1 INICIO
+2   INICIAR listaMassaDados ← [2, 8, 5, 3, 9, 4, 1]
+3    tamanhoLista ← tamanho(listaMassaDados)
+4
+5    PARA i de 1 até tamanhoLista - 1 FAÇA
+6        PARA j de 0 até tamanhoLista - 2 FAÇA
+7            SE listaMassaDados[j] > listaMassaDados[j + 1] ENTÃO
+8                Trocar listaMassaDados[j] e listaMassaDados[j + 1]
+9            FIM SE
+10        FIM PARA
+11    FIM PARA
+12    Exibir listaMassaDados
+13 FIM ALGORITMO
+```
+
+| Caso         | Complexidade | Informacões                                                                                                            |
+|--------------|--------------|------------------------------------------------------------------------------------------------------------------------|
+| Caso médio   | O(n²)        | O Bubble Sort, no caso médio, executa O(n²) operações, pois metade das trocas ainda é necessária para ordenar a lista. |
+| Melhor Casdo | O(n²)        | No Bubble Sort, o melhor caso ocorre quando a lista já está totalmente ordenada.                                       |
+| Pior caso    | O(n²)        | Ocorre quando a entrada está na pior disposição possível, exigindo o máximo número de operações.                       |
+
+
+
 
 ### Bubble Sort
 
@@ -122,3 +153,4 @@ UNIQUENESS-CHECK-SET(A)
 - [HashMap containsKey() Method in Java](https://www.geeksforgeeks.org/hashmap-containskey-method-in-java/)
 - [Linear Search](https://www.geeksforgeeks.org/linear-search/)
 - [HashSet](https://www.geeksforgeeks.org/hashset-in-java/)
+- [BubbleSort](https://www.youtube.com/watch?v=xli_FI7CuzA)
