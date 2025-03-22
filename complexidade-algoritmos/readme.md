@@ -107,6 +107,8 @@ UNIQUENESS-CHECK-SET(A)
 |Caso médio         |O(n)        | As operações de inserção, pesquisa e remoção em uma tabela hash têm complexidade O(1), ou seja, são muito rápidas.                     |
 |Pior caso          |O(n)        | Se houver muitas colisões na tabela hash, a complexidade pode aumentar para O(n), mas isso é raro quando a função de hash é eficiente. |
 
+[Verificação de Unicidade com Set em Java](./codes/UniquenessCheckSet.java).
+
 ## Código de Complexidade O(n²)
 
 ### Bubble Sort
@@ -142,6 +144,8 @@ BUBBLE-SORT(A)
 | Melhor Casdo | O(n²)        | No Bubble Sort, o melhor caso ocorre quando a lista já está totalmente ordenada.                                       |
 | Pior caso    | O(n²)        | Ocorre quando a entrada está na pior disposição possível, exigindo o máximo número de operações.                       |
 
+[Bubble Sort em Java](./codes/BubbleSort.java).
+
 ### Selection Sort
 
 A ordenação por seleção é um método simples que ordena um vetor encontrando o menor elemento e posicionando-o na próxima posição disponível. Embora tenha complexidade quadrática, sendo ineficiente para grandes conjuntos, é didaticamente relevante por sua clareza e economia de memória, já que opera in-place.
@@ -150,6 +154,7 @@ Seu funcionamento consiste em iterativamente identificar o menor elemento de um 
 
 ##### Pseudocódigo
 
+```
 SELECTION-SORT(A)
 1  for i = 0 to A.length - 2
 2      minIndex ← i
@@ -157,10 +162,13 @@ SELECTION-SORT(A)
 4          if A[j] < A[minIndex]
 5              minIndex ← j
 6      swap A[i] with A[minIndex]
+```
 
 | Caso         | Complexidade | Informacões                                                                                                                         |
 |--------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------|
 |Qualquer caso |O(n²)	      |O algoritmo realiza diversas operações.                                                                                              |
+
+[Selection Sort em Java](./codes/SelectionSort.java).
 
 ## Código de Complexidade O(log n)
 
