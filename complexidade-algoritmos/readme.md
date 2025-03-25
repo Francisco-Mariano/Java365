@@ -107,7 +107,11 @@ UNIQUENESS-CHECK-SET(A)
 |Caso médio         |O(n)        | As operações de inserção, pesquisa e remoção em uma tabela hash têm complexidade O(1), ou seja, são muito rápidas.                     |
 |Pior caso          |O(n)        | Se houver muitas colisões na tabela hash, a complexidade pode aumentar para O(n), mas isso é raro quando a função de hash é eficiente. |
 
+[Verificação de Unicidade com Set em Java](./codes/UniquenessCheckSet.java).
+
 ## Código de Complexidade O(n²)
+
+### Bubble Sort
 
 A notação O(n²) representa a complexidade de algoritmos cujo tempo de execução cresce quadraticamente em relação ao tamanho da entrada. Isso significa que, se dobrarmos o número 
 de elementos de entrada (n), o tempo de execução será aproximadamente quatro vezes maior.
@@ -115,8 +119,10 @@ de elementos de entrada (n), o tempo de execução será aproximadamente quatro 
 Essa complexidade ocorre, geralmente, quando um algoritmo possui dois loops aninhados iterando sobre os elementos de entrada. Como resultado, para cada elemento processado no primeiro
 loop, o segundo loop também percorre todos os elementos, multiplicando o número total de operações.
 
+##### Pseudocódigo
+
 ```
-UNIQUENESS-CHECK-BubbleSort(A)
+BUBBLE-SORT(A)
 1 INICIO
 2   INICIAR listaMassaDados ← [2, 8, 5, 3, 9, 4, 1]
 3    tamanhoLista ← tamanho(listaMassaDados)
@@ -138,10 +144,34 @@ UNIQUENESS-CHECK-BubbleSort(A)
 | Melhor Casdo | O(n²)        | No Bubble Sort, o melhor caso ocorre quando a lista já está totalmente ordenada.                                       |
 | Pior caso    | O(n²)        | Ocorre quando a entrada está na pior disposição possível, exigindo o máximo número de operações.                       |
 
+[Bubble Sort em Java](./codes/BubbleSort.java).
 
+### Selection Sort
 
+A ordenação por seleção é um método simples que ordena um vetor encontrando o menor elemento e posicionando-o na próxima posição disponível. Embora tenha complexidade quadrática, sendo ineficiente para grandes conjuntos, é didaticamente relevante por sua clareza e economia de memória, já que opera in-place.
 
-### Bubble Sort
+Seu funcionamento consiste em iterativamente identificar o menor elemento de um vetor e posicioná-lo na próxima posição disponível, iniciando pela primeira posição à esquerda. Em cada iteração, o algoritmo compara um elemento com todos os demais para determinar o menor valor entre os elementos não ordenados. Dessa forma, após n−1 iterações, o vetor estará completamente ordenado.
+
+##### Pseudocódigo
+
+```
+SELECTION-SORT(A)
+1  for i = 0 to A.length - 2
+2      minIndex ← i
+3      for j = i + 1 to A.length - 1
+4          if A[j] < A[minIndex]
+5              minIndex ← j
+6      swap A[i] with A[minIndex]
+```
+
+| Caso         | Complexidade | Informacões                                                                                                                         |
+|--------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------|
+|Qualquer caso |O(n²)	      |O algoritmo realiza diversas operações.                                                                                              |
+
+[Selection Sort em Java](./codes/SelectionSort.java).
+
+## Código de Complexidade O(log n)
+
 
 ## Recursos adicionais para aprofundamento
 
