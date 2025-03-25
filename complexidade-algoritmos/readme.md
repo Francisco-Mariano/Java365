@@ -10,7 +10,10 @@
 
 ### Busca Linear
 
-O primeiro e mais simples exemplo é a _[Busca Linear](https://www.geeksforgeeks.org/linear-search/)_. Esse algoritmo percorre sequencialmente uma lista de valores (neste caso, nomes) e compara cada elemento com o valor desejado. Se encontrar uma correspondência, a busca é encerrada; caso contrário, continua até o final da lista. Esse método é intuitivo, mas pode ser ineficiente para listas grandes, pois sua complexidade no pior caso é _O(n)_.
+O primeiro e mais simples exemplo é a _[Busca Linear](https://www.geeksforgeeks.org/linear-search/)_. Esse algoritmo
+percorre sequencialmente uma lista de valores (neste caso, nomes) e compara cada elemento com o valor desejado. Se
+encontrar uma correspondência, a busca é encerrada; caso contrário, continua até o final da lista. Esse método é
+intuitivo, mas pode ser ineficiente para listas grandes, pois sua complexidade no pior caso é _O(n)_.
 
 ##### Pseudocódigo
 
@@ -24,20 +27,27 @@ LINEAR-SEARCH(A, v)
 
 O tempo de execução deste algoritmo depende da posição do elemento na lista:
 
-|    Caso    |Complexidade| Informacões                                                                                                                    |
-|------------|----|--------------------------------------------------------------------------------------------------------------------------------|
-|Melhor caso |O(1)| Se o nome estiver na primeira posição, encontramos imediatamente e encerramos a busca                                          |
-|Pior caso   |O(n)| Se o nome estiver na última posição ou não existir na lista, precisamos percorrer todos os elementos antes de concluir a busca |
+| Caso        | Complexidade | Informacões                                                                                                                    |
+|-------------|--------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Melhor caso | O(1)         | Se o nome estiver na primeira posição, encontramos imediatamente e encerramos a busca                                          |
+| Pior caso   | O(n)         | Se o nome estiver na última posição ou não existir na lista, precisamos percorrer todos os elementos antes de concluir a busca |
 
-Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, confira o código disponível [aqui](./codes/LinearSearch.java).
+Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, confira o código
+disponível [aqui](./codes/LinearSearch.java).
 
 ### Verificação de Unicidade com Hash Table
 
-Esse segundo exemplo é um pouco mais complexo, pois verifica a presença de valores duplicados em uma lista. Para resolver esse problema em tempo O(n), utilizamos o conceito de _[Hash Table](https://www.geeksforgeeks.org/hash-table-data-structure/)_.
+Esse segundo exemplo é um pouco mais complexo, pois verifica a presença de valores duplicados em uma lista. Para
+resolver esse problema em tempo O(n), utilizamos o conceito de
+_[Hash Table](https://www.geeksforgeeks.org/hash-table-data-structure/)_.
 
-O algoritmo percorre a lista e armazena cada valor em uma estrutura de dados com busca rápida, que no caso é a Hash Table. Como essa estrutura tem complexidade O(1) na média para inserção e busca, conseguimos garantir que o algoritmo funcione em O(n).
+O algoritmo percorre a lista e armazena cada valor em uma estrutura de dados com busca rápida, que no caso é a Hash
+Table. Como essa estrutura tem complexidade O(1) na média para inserção e busca, conseguimos garantir que o algoritmo
+funcione em O(n).
 
-Se quiser conhecer mais sobre Hash, que significa "cortar e misturar", recomendamos fortemente a leitura do material da _[TopTal](https://www.toptal.com/big-data/consistent-hashing)_, que fornece uma excelente base para o entendimento e aplicação do conceito, além da estrutura de dados utilizada no Java.
+Se quiser conhecer mais sobre Hash, que significa "cortar e misturar", recomendamos fortemente a leitura do material da
+_[TopTal](https://www.toptal.com/big-data/consistent-hashing)_, que fornece uma excelente base para o entendimento e
+aplicação do conceito, além da estrutura de dados utilizada no Java.
 
 ##### Pseudocódigo
 
@@ -54,19 +64,26 @@ UNIQUENESS-CHECK(A)
 9  return hasDuplicated
 ```
 
-A complexidade da verificação de duplicatas usando uma Hash Table é geralmente considerada O(n), pois a maioria das operações de inserção e busca ocorre em tempo constante, O(1), na média. Isso significa que, ao percorrer n elementos e realizar uma inserção ou verificação para cada um, o tempo total esperado é proporcional a n.
+A complexidade da verificação de duplicatas usando uma Hash Table é geralmente considerada O(n), pois a maioria das
+operações de inserção e busca ocorre em tempo constante, O(1), na média. Isso significa que, ao percorrer n elementos e
+realizar uma inserção ou verificação para cada um, o tempo total esperado é proporcional a n.
 
-No entanto, é importante notar que, no pior caso, a complexidade pode se degradar para O(n²). Esse cenário extremo ocorreria se uma função hash mal projetada fizesse com que todos os elementos fossem mapeados para o mesmo bucket. Nessa situação, cada operação de busca ou inserção precisaria percorrer uma lista com n elementos, fazendo com que cada operação tivesse complexidade O(n). Assim, ao realizar essas operações para cada um dos n elementos, teríamos um custo total de O(n) × O(n) = O(n²).
+No entanto, é importante notar que, no pior caso, a complexidade pode se degradar para O(n²). Esse cenário extremo
+ocorreria se uma função hash mal projetada fizesse com que todos os elementos fossem mapeados para o mesmo bucket. Nessa
+situação, cada operação de busca ou inserção precisaria percorrer uma lista com n elementos, fazendo com que cada
+operação tivesse complexidade O(n). Assim, ao realizar essas operações para cada um dos n elementos, teríamos um custo
+total de O(n) × O(n) = O(n²).
 
 O tempo de execução deste algoritmo:
 
-|       Caso        |Complexidade| Informacões                                                                                                       |
-|-------------------|------------|-------------------------------------------------------------------------------------------------------------------|
-|Caso médio         |O(n)        | Devido à eficiência das operações de hash                                                                         |
-|Pior caso          |O(n)        | Se houver muitas colisões na Hash Table, tornando a busca O(n) em casos extremos                                  |
-|Pior caso teórico  |O(n²)       | Se ocorrerem colisões massivas que forcem todas as operações a percorrerem listas de tamanho n em um único bucket |
+| Caso              | Complexidade | Informacões                                                                                                       |
+|-------------------|--------------|-------------------------------------------------------------------------------------------------------------------|
+| Caso médio        | O(n)         | Devido à eficiência das operações de hash                                                                         |
+| Pior caso         | O(n)         | Se houver muitas colisões na Hash Table, tornando a busca O(n) em casos extremos                                  |
+| Pior caso teórico | O(n²)        | Se ocorrerem colisões massivas que forcem todas as operações a percorrerem listas de tamanho n em um único bucket |
 
-Nós consideramos que o pior caso é O(n), pois atualmente as implementações modernas de Hash Table como o HashMap/HashTable do Java e de outras linguagens, utilizam técnicas como:
+Nós consideramos que o pior caso é O(n), pois atualmente as implementações modernas de Hash Table como o
+HashMap/HashTable do Java e de outras linguagens, utilizam técnicas como:
 
 - Redimensionamento Dinâmico: Ajustam o tamanho da tabela automaticamente para evitar muitas colisões;
 - Funções Hash Eficientes: Distribuem bem os valores, reduzindo a chance de colisões excessivas;
@@ -74,13 +91,18 @@ Nós consideramos que o pior caso é O(n), pois atualmente as implementações m
 
 Portanto, na prática, a complexidade se mantém O(n) na maioria dos casos reais.
 
-Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, confira o código disponível [aqui](./codes/UniquenessCheck.java). Na versão anterior, para simplificar, usei o nome como chave e o valor 0. Porém, você pode armazenar o objeto completo Pessoa como valor. Confira [aqui](./codes/CompleteUniquenessCheck.java) um exemplo que utiliza a classe Pessoa completa.
+Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, confira o código
+disponível [aqui](./codes/UniquenessCheck.java). Na versão anterior, para simplificar, usei o nome como chave e o valor
+0. Porém, você pode armazenar o objeto completo Pessoa como valor. Confira [aqui](./codes/CompleteUniquenessCheck.java)
+um exemplo que utiliza a classe Pessoa completa.
 
 ### Verificação de Unicidade com Set
 
-A interface Set faz parte do pacote java.util e estende a interface Collection. Ela representa um conjunto de elementos sem uma ordem definida e não permite valores duplicados.
+A interface Set faz parte do pacote java.util e estende a interface Collection. Ela representa um conjunto de elementos
+sem uma ordem definida e não permite valores duplicados.
 
-O HashSet é muito útil quando precisamos armazenar elementos únicos sem nos preocupar com a ordem. Ele usa uma tabela hash, o que torna as operações de inserção, remoção e busca muito rápidas, com uma complexidade média de O(1).
+O HashSet é muito útil quando precisamos armazenar elementos únicos sem nos preocupar com a ordem. Ele usa uma tabela
+hash, o que torna as operações de inserção, remoção e busca muito rápidas, com uma complexidade média de O(1).
 
 ##### Pseudocódigo
 
@@ -100,12 +122,14 @@ UNIQUENESS-CHECK-SET(A)
 12   FIM PARA
 12 FIM
 ```
-- No exemplo, temos uma lista com valores repetidos e queremos garantir que os elementos fiquem únicos. Para isso, utilizamos o HashSet, que automaticamente elimina duplicatas.
 
-|       Caso        |Complexidade| Informacões                                                                                                                            |
-|-------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------|
-|Caso médio         |O(n)        | As operações de inserção, pesquisa e remoção em uma tabela hash têm complexidade O(1), ou seja, são muito rápidas.                     |
-|Pior caso          |O(n)        | Se houver muitas colisões na tabela hash, a complexidade pode aumentar para O(n), mas isso é raro quando a função de hash é eficiente. |
+- No exemplo, temos uma lista com valores repetidos e queremos garantir que os elementos fiquem únicos. Para isso,
+  utilizamos o HashSet, que automaticamente elimina duplicatas.
+
+| Caso       | Complexidade | Informacões                                                                                                                            |
+|------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Caso médio | O(n)         | As operações de inserção, pesquisa e remoção em uma tabela hash têm complexidade O(1), ou seja, são muito rápidas.                     |
+| Pior caso  | O(n)         | Se houver muitas colisões na tabela hash, a complexidade pode aumentar para O(n), mas isso é raro quando a função de hash é eficiente. |
 
 [Verificação de Unicidade com Set em Java](./codes/UniquenessCheckSet.java).
 
@@ -113,10 +137,12 @@ UNIQUENESS-CHECK-SET(A)
 
 ### Bubble Sort
 
-A notação O(n²) representa a complexidade de algoritmos cujo tempo de execução cresce quadraticamente em relação ao tamanho da entrada. Isso significa que, se dobrarmos o número 
+A notação O(n²) representa a complexidade de algoritmos cujo tempo de execução cresce quadraticamente em relação ao
+tamanho da entrada. Isso significa que, se dobrarmos o número
 de elementos de entrada (n), o tempo de execução será aproximadamente quatro vezes maior.
 
-Essa complexidade ocorre, geralmente, quando um algoritmo possui dois loops aninhados iterando sobre os elementos de entrada. Como resultado, para cada elemento processado no primeiro
+Essa complexidade ocorre, geralmente, quando um algoritmo possui dois loops aninhados iterando sobre os elementos de
+entrada. Como resultado, para cada elemento processado no primeiro
 loop, o segundo loop também percorre todos os elementos, multiplicando o número total de operações.
 
 ##### Pseudocódigo
@@ -148,9 +174,14 @@ BUBBLE-SORT(A)
 
 ### Selection Sort
 
-A ordenação por seleção é um método simples que ordena um vetor encontrando o menor elemento e posicionando-o na próxima posição disponível. Embora tenha complexidade quadrática, sendo ineficiente para grandes conjuntos, é didaticamente relevante por sua clareza e economia de memória, já que opera in-place.
+A ordenação por seleção é um método simples que ordena um vetor encontrando o menor elemento e posicionando-o na próxima
+posição disponível. Embora tenha complexidade quadrática, sendo ineficiente para grandes conjuntos, é didaticamente
+relevante por sua clareza e economia de memória, já que opera in-place.
 
-Seu funcionamento consiste em iterativamente identificar o menor elemento de um vetor e posicioná-lo na próxima posição disponível, iniciando pela primeira posição à esquerda. Em cada iteração, o algoritmo compara um elemento com todos os demais para determinar o menor valor entre os elementos não ordenados. Dessa forma, após n−1 iterações, o vetor estará completamente ordenado.
+Seu funcionamento consiste em iterativamente identificar o menor elemento de um vetor e posicioná-lo na próxima posição
+disponível, iniciando pela primeira posição à esquerda. Em cada iteração, o algoritmo compara um elemento com todos os
+demais para determinar o menor valor entre os elementos não ordenados. Dessa forma, após n−1 iterações, o vetor estará
+completamente ordenado.
 
 ##### Pseudocódigo
 
@@ -164,14 +195,56 @@ SELECTION-SORT(A)
 6      swap A[i] with A[minIndex]
 ```
 
-| Caso         | Complexidade | Informacões                                                                                                                         |
-|--------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------|
-|Qualquer caso |O(n²)	      |O algoritmo realiza diversas operações.                                                                                              |
+| Caso          | Complexidade | Informacões                             |
+|---------------|--------------|-----------------------------------------|
+| Qualquer caso | O(n²)	       | O algoritmo realiza diversas operações. |
 
-[Selection Sort em Java](./codes/SelectionSort.java).
+[Selection  Binary Search em Java](./codes/SelectionSort.java).
+A busca binária é um algoritmo de busca usado para encontrar a posição de um valor alvo dentro de uma matriz ordenada.
+Ele funciona dividindo repetidamente o intervalo de busca pela metade até que o valor alvo seja encontrado ou o
+intervalo esteja vazio. O intervalo de busca é dividido pela metade comparando o
+elemento alvo com o valor do meio do espaço de busca.
+
+Algoritmo de busca binária iterativa
+Algoritmo de busca binária recursiva
+
+##### Pseudocódigo
+
+```
+SELECTION- Binary Search(A)
+01Início  
+02   Definir listaNumeros como [1, 3, 10, 34, 45, 67, 89, 98, 100]  
+03    Definir p como 2  
+04   Definir n como tamanho de listaNumeros  
+05    Definir index como n / 2  
+06
+07   Enquanto n ≥ 1 faça  
+08        Se listaNumeros[index] ≠ p então  
+09            Se listaNumeros[index] > p então  
+10                listaNumeros = sublista de 0 até index - 1  
+11            Senão  
+12               listaNumeros = sublista de index + 1 até n  
+13            FimSe  
+14        Senão  
+15            Imprimir "Encontrou " + listaNumeros[index]  
+16            Parar  
+17        FimSe  
+18        
+19        Atualizar n para tamanho de listaNumeros  
+20        Atualizar index para n / 2  
+21    FimEnquanto  
+22Fim
+
+```
+
+| Caso | Complexidade | Informacões |
+|--------------|---O(log
+n)- |-------------------------------------------------------------------------------------------|
+|Melhor caso | O(1)        |Ocorre quando o elemento alvo já está no meio da lista na primeira tentativa. |
+|Caso médio |O(log N)      |O espaço de busca é reduzido pela metade a cada iteração. |
+|Pior caso |O(log N)      |Ocorre quando o elemento não está na lista ou está no final da busca. |
 
 ## Código de Complexidade O(log n)
-
 
 ## Recursos adicionais para aprofundamento
 
@@ -184,3 +257,4 @@ SELECTION-SORT(A)
 - [Linear Search](https://www.geeksforgeeks.org/linear-search/)
 - [HashSet](https://www.geeksforgeeks.org/hashset-in-java/)
 - [BubbleSort](https://www.youtube.com/watch?v=xli_FI7CuzA)
+- [Binary Search](https://www.geeksforgeeks.org/binary-search/?ref=header_outind)
