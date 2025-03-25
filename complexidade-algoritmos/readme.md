@@ -93,8 +93,9 @@ Portanto, na prática, a complexidade se mantém O(n) na maioria dos casos reais
 
 Se você se interessou pelo algoritmo e deseja ver sua implementação em Java, confira o código
 disponível [aqui](./codes/UniquenessCheck.java). Na versão anterior, para simplificar, usei o nome como chave e o valor
+
 0. Porém, você pode armazenar o objeto completo Pessoa como valor. Confira [aqui](./codes/CompleteUniquenessCheck.java)
-um exemplo que utiliza a classe Pessoa completa.
+   um exemplo que utiliza a classe Pessoa completa.
 
 ### Verificação de Unicidade com Set
 
@@ -200,6 +201,11 @@ SELECTION-SORT(A)
 | Qualquer caso | O(n²)	       | O algoritmo realiza diversas operações. |
 
 [Selection  Binary Search em Java](./codes/SelectionSort.java).
+
+
+## Código de Complexidade O(log n)
+
+
 A busca binária é um algoritmo de busca usado para encontrar a posição de um valor alvo dentro de uma matriz ordenada.
 Ele funciona dividindo repetidamente o intervalo de busca pela metade até que o valor alvo seja encontrado ou o
 intervalo esteja vazio. O intervalo de busca é dividido pela metade comparando o
@@ -237,14 +243,13 @@ SELECTION- Binary Search(A)
 
 ```
 
-| Caso | Complexidade | Informacões |
-|--------------|---O(log
-n)- |-------------------------------------------------------------------------------------------|
-|Melhor caso | O(1)        |Ocorre quando o elemento alvo já está no meio da lista na primeira tentativa. |
-|Caso médio |O(log N)      |O espaço de busca é reduzido pela metade a cada iteração. |
-|Pior caso |O(log N)      |Ocorre quando o elemento não está na lista ou está no final da busca. |
+| Caso        | Complexidade | Informacões                                                                   |
+|-------------|--------------|-------------------------------------------------------------------------------|
+| Melhor caso | O(1)         | Ocorre quando o elemento alvo já está no meio da lista na primeira tentativa. |
+| Caso médio  | O(log N)     | O espaço de busca é reduzido pela metade a cada iteração.                     |
+| Pior caso   | O(log N)     | Ocorre quando o elemento não está na lista ou está no final da busca.         |
 
-## Código de Complexidade O(log n)
+
 
 ## Recursos adicionais para aprofundamento
 
